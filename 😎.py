@@ -40,6 +40,12 @@ class MainWindow(QMainWindow):
         self.label.setGeometry(50, 50, 200, 30)
         self.label.setStyleSheet("color: white; font-size: 16px;")
 
+        self.label2 = QLabel("я знаю что тебе нечего сказать, ты подавлен:", self)
+        self.label2.setGeometry(200, 100, 500, 60)
+        self.label2.setStyleSheet("color: white; font-size: 16px;")
+
+
+
         # Поле ввода
         self.input_field = QLineEdit(self)
         self.input_field.setGeometry(200, 50, 200, 30)
@@ -63,9 +69,14 @@ class MainWindow(QMainWindow):
                     border-radius: 40px;
                 }
                 """)
+        self.rockstar = 0
+
 
     def score(self):
-        print("no")
+        self.rockstar += 1
+        print(self.rockstar)
+        self.label2.setText(self.rockstar)
+
 
 app = QApplication(sys.argv)
 window = MainWindow()
